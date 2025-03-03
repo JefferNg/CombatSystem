@@ -78,6 +78,12 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintPure, BlueprintCallable)
 	float GetMaxHealth();
 
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void SetMediumCoolDown(const float Delay);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void SetLargeCoolDown(const float Delay);
+
 private:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="Finisher", meta=(AllowPrivateAccess=true))
 	FFinisherAnimData FinisherAnims;
