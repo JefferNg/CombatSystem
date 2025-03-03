@@ -69,6 +69,15 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category="Counter")
 	void SetCounterAnims(const FFinisherAnimData& NewCounterAnim);
 
+	UFUNCTION(BlueprintImplementableEvent, BlueprintPure, BlueprintCallable)
+	float GetHealth();
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void SetHealth(const float& Damage);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintPure, BlueprintCallable)
+	float GetMaxHealth();
+
 private:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="Finisher", meta=(AllowPrivateAccess=true))
 	FFinisherAnimData FinisherAnims;
@@ -84,6 +93,12 @@ private:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Finisher", meta=(AllowPrivateAccess=true))
 	TArray<FFinisherAnimData> CounterAnimSets;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Health", meta = (AllowPrivateAccess = "true"))
+	float CurrentHealth;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Health", meta = (AllowPrivateAccess = "true"))
+	float MaxHealth;
 	
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combo")

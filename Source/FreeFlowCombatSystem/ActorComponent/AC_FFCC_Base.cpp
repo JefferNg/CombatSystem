@@ -10,6 +10,7 @@ UAC_FFCC_Base::UAC_FFCC_Base()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-	// ...
+	MaxHealth = 100.0f;
+	CurrentHealth = MaxHealth;
 }
 
